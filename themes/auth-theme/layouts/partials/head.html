@@ -1,0 +1,7 @@
+<head>
+
+<!-- Initialize Javascript -->
+{{ $build_options := dict "targetPath" "js/main.js" }}
+{{ $js := resources.Get "scripts/main.js" | js.Build $build_options }}
+<script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
+</head>

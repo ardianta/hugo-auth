@@ -1,0 +1,39 @@
+{{ define "main" }}
+
+{{ if .Params.need_auth }}
+<!-- Render app that request JSON content only for authenticated user -->
+
+<main x-data="{post: ''}">
+  <template x-if="!!$store.auth.currentUser">
+    <article x-init="post = await $store.post.get('{{ $.Permalink }}index.json') ; ">
+    <h1 x-text="post.title"></h1>
+    <hr>
+    <div x-html="post.content"></div>
+  </article>
+  </template>
+
+  <progress x-data x-show="$store.status.loading"></progress>
+
+  <template x-if="!$store.auth.currentUser && !$store.status.loading">
+    <div>
+      <h1>You Need to Login to read this post</h1>
+      <a href="/login">Login</a>
+    </div>
+  </template>
+</main>
+
+{{ else }}
+<!-- Render public content -->
+<main>
+  <article>
+    <h1>{{ .Title }}</h1>
+    <hr>
+    <div>
+      {{ .Content }}
+    </div>
+  </article>
+</main>
+
+{{ end }}
+
+{{ end }}

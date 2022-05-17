@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<form x-data="{email: '', password: ''}"  action="">
+  <h2>Register Here</h2>
+  <p>
+    <label for="email">Email</label>
+    <input type="email" name="email" x-model:value="email">
+  </p>
+  <p>
+    <label for="password">Password</label>
+    <input type="password" name="password" x-model:value="password">
+  </p>
+
+  <button type="submit" @click.prevent="$store.auth.register(email, password)">Register</button>
+</form>
+
+{{ end }}

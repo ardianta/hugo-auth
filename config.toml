@@ -1,0 +1,5 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My Secure Hugo Site'
+
+theme = "auth-theme"

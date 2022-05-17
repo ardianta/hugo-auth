@@ -1,0 +1,12 @@
+{{ define "main" }}
+<h1>Welcome to the home page</h1>
+
+<div x-data>
+  <button @click="$dispatch('login')">Signin here</button>
+</div>
+
+<div x-data>
+  <p x-text="$store.auth.currentUser.email"></p>
+</div>
+
+{{ end }}

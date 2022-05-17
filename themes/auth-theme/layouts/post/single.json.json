@@ -1,0 +1,4 @@
+{{ dict 
+  "title" .Title 
+  "content" .Content | jsonify 
+}}

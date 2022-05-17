@@ -1,0 +1,16 @@
+{
+  "name": "hugo-auth",
+  "version": "1.0.0",
+  "description": "Demo only show content for authenticated user. Backend using Firebase.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alpinejs": "^3.10.2",
+    "firebase": "^9.8.1"
+  }
+}

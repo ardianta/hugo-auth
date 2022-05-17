@@ -1,0 +1,18 @@
+<dialog x-data="{open: false, email: '', password: ''}" :open="open" @login.window="open = true">
+
+  <h1>Login Form</h1>
+  <form action="" method="post">
+    <p>
+      <label for="email">Email</label>
+      <input type="email" name="email" x-model:value="email">
+    </p>
+    <p>
+      <label for="password">Password</label>
+      <input type="password" name="password" x-model:value="password">
+    </p>
+
+    <button type="submit" @click.prevent="$store.auth.login(email, password)">Login</button>
+    <button type="submit" @click="open = false">Cancel</button>
+  </form>
+
+</dialog>

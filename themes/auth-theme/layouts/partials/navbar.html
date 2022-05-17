@@ -1,0 +1,14 @@
+<nav x-data style="display: flex; gap: 1rem;">
+  <a href="{{ .Site.BaseURL }}">Home</a>
+  <a href="/post/">Posts</a>
+  
+  <div x-show="!$store.auth.currentUser" style="display: inline-flex; gap: 1rem;">
+    <a href="/login/">Login</a>
+    <a href="/register/">Register</a>
+  </div>
+  
+  <div x-show="!!$store.auth.currentUser" style="margin-left: auto; display: none;">
+      Welcome <b x-text="$store.auth.currentUser.email"></b>
+      <a href="#!" @click="$store.auth.logout()">Logout</a>
+  </div>
+</nav>
