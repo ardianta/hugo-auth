@@ -7,7 +7,7 @@
     <a href="/register/">Register</a>
   </div>
   
-  <div x-show="!!$store.auth.currentUser" style="margin-left: auto; display: none;">
+  <div x-show="$store.auth.currentUser" style="margin-left: auto; display: none;">
       Welcome <b x-text="$store.auth.currentUser.email"></b>
       <a href="#!" @click="$store.auth.logout()">Logout</a>
   </div>

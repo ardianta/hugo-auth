@@ -1,7 +1,7 @@
 {{ define "main" }}
 <h1>Welcome to the home page</h1>
 
-<div x-data>
+<div x-data x-show="!$store.auth.currentUser">
   <button @click="$dispatch('login')">Signin here</button>
 </div>
 

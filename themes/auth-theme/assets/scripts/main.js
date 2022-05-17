@@ -43,6 +43,7 @@ Alpine.store("auth", {
         // Signed in
         this.currentUser = userCredential.user;
         Alpine.store("status").loaded();
+        window.location = "/";
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -58,7 +59,7 @@ Alpine.store("auth", {
         // Signed in
         this.currentUser = userCredential.user;
         Alpine.store("status").loaded();
-        // ...
+        window.location = "/";
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -72,6 +73,7 @@ Alpine.store("auth", {
       .then(() => {
         // Sign-out successful.
         this.currentUser = false;
+        window.location = "/";
       })
       .catch((error) => {
         // An error happened.
